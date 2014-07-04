@@ -1,2 +1,0 @@
-highchart_examples
-==================
