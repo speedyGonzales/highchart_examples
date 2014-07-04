@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Highcharts example page</title>
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script  src="/static/js/highcharts/highcharts.js" ></script>
+    <script  src="/static/js/highcharts/modules/exporting.js" ></script>
+  </head>
+
+  <body>
+      <p>Highcharts content: </p>
+      <a href='{% url "base_line" %}'>Base line</a>
+
+
+      <div class="col-lg-10" style="text-align: center">
+            {% block content %}{% endblock %}
+          </div>
+  </body>
+</html>
