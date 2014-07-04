@@ -2,18 +2,11 @@
 {% block content %}
 
 
-{% for d in data %}
-    <p>{% for field,value in d.items %}
-         {{value.label}}: {{value.fieldvalue}}
-    {% endfor %}</p>
-{% endfor %}
-
-{% if user.is_authenticated %}
 <div id="chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     <script type="text/javascript">
 $(function () {
-         var cat={{des | safe}}
-         var dat={{dis | safe }}
+         var my_categories={{my_categories | safe}}
+         var my_data={{my_data | safe }}
 
         $('#chart').highcharts({
             title: {
@@ -36,17 +29,17 @@ $(function () {
                 borderWidth: 0
             },
               xAxis: {
-                categories: cat
+                categories: my_categories
             },
             series: [{
                 name: 'distance',
-                data: dat
+                data: my_data
             }]
         });
     });
 
     </script>
-{% endif %}
+
 {% endblock %}
 
 
